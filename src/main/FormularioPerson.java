@@ -32,6 +32,7 @@ public class FormularioPerson extends javax.swing.JFrame {
         nombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jbtlimpiar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Person Data");
@@ -81,6 +82,9 @@ public class FormularioPerson extends javax.swing.JFrame {
         });
         jPanel1.add(jbtlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
+        jButton1.setText("Hello!");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,9 +93,7 @@ public class FormularioPerson extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -144,6 +146,7 @@ public class FormularioPerson extends javax.swing.JFrame {
     private javax.swing.JTextField celular;
     private javax.swing.JTextField direccion;
     private javax.swing.JButton guardar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
