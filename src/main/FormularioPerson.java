@@ -1,5 +1,7 @@
 package main;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /** @author alfred */
@@ -9,7 +11,7 @@ public class FormularioPerson extends javax.swing.JFrame {
     public FormularioPerson() {
         initComponents();
         
-        this.datos = new String[4];
+        this.datos = new String[5];
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -33,6 +35,8 @@ public class FormularioPerson extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jbtlimpiar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jDateChooserFecha_nac = new com.toedter.calendar.JDateChooser();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Person Data");
@@ -44,7 +48,7 @@ public class FormularioPerson extends javax.swing.JFrame {
         jtadatos.setRows(5);
         jScrollPane1.setViewportView(jtadatos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 320, 190));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 320, 190));
 
         guardar.setText("Guardar");
         guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -52,11 +56,11 @@ public class FormularioPerson extends javax.swing.JFrame {
                 guardarActionPerformed(evt);
             }
         });
-        jPanel1.add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
+        jPanel1.add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
         jPanel1.add(direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 180, -1));
 
-        jLabel2.setText("Dirección:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 130, 23));
+        jLabel2.setText("Fecha Nac.:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 130, 23));
 
         jLabel5.setText("Celular/Teléfono:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 130, 23));
@@ -80,7 +84,7 @@ public class FormularioPerson extends javax.swing.JFrame {
                 jbtlimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel1.add(jbtlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
         jButton1.setText("Hello!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +92,11 @@ public class FormularioPerson extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
+        jPanel1.add(jDateChooserFecha_nac, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 180, -1));
+
+        jLabel6.setText("Dirección:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 130, 23));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,7 +121,7 @@ public class FormularioPerson extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtlimpiarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(this, "Hello baby <3");
+        JOptionPane.showMessageDialog(null, "Hello baby <3");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //METODOS PROPIOS
@@ -122,6 +130,7 @@ public class FormularioPerson extends javax.swing.JFrame {
         datos[1] = cedula.getText();
         datos[2] = celular.getText();
         datos[3] = direccion.getText();
+        datos[4] = (new SimpleDateFormat("dd-M-y")).format(jDateChooserFecha_nac.getDate());
     }
     
     private void guardar(){
@@ -147,7 +156,7 @@ public class FormularioPerson extends javax.swing.JFrame {
     }
     
     private boolean camposLLenos(){
-        return !(nombre.getText().equals("") || cedula.getText().equals("") || celular.getText().equals("") || direccion.getText().equals(""));
+        return !(nombre.getText().equals("") || cedula.getText().equals("") || celular.getText().equals("") || direccion.getText().equals("") || jDateChooserFecha_nac.getDate()==null);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -156,11 +165,13 @@ public class FormularioPerson extends javax.swing.JFrame {
     private javax.swing.JTextField direccion;
     private javax.swing.JButton guardar;
     private javax.swing.JButton jButton1;
+    private com.toedter.calendar.JDateChooser jDateChooserFecha_nac;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtlimpiar;
